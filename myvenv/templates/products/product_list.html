@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block title %}Product List{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f4f4f4;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: white;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 15px;
+        margin: 5px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        background: white;
+        margin: 10px 0;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .button-group {
+        display: flex;
+        gap: 10px;
+    }
+</style>
+
+<div class="container">
+    <h2>Product List</h2>
+
+    <!-- Button to add a product -->
+    <a href="{% url 'add_product' %}" class="btn">Add Product</a>
+
+    <ul>
+        {% for product in products %}
+            <li>
+                <div>
+                    <strong>{{ product.name }}</strong> - {{ product.vendor.name }}
+                </div>
+
+                <!-- Action buttons -->
+                <div class="button-group">
+                    <a href="{% url 'register_product' %}" class="btn">Register</a>
+                    <a href="{% url 'upload_invoice' %}" class="btn">Upload Invoice</a>
+                </div>
+            </li>
+        {% empty %}
+            <p>No products available.</p>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

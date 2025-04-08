@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Upload Invoice{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'forms.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h2>Upload Invoice</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+{% endblock %}
