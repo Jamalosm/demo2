@@ -1,4 +1,4 @@
-/* General Styles */
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,36 +7,53 @@ body {
     color: #333;
 }
 
-/* Navigation Bar */
+/* Navigation */
 nav {
     background-color: #333;
-    padding: 10px 0;
+    padding: 40px 0;
 }
 
 nav ul {
     list-style: none;
-    text-align: center;
     padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 15px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
 }
 
 /* Container */
 .container {
-    width: 80%;
-    margin: auto;
-    background: white;
+    max-width: 1000px;
+    margin: 20px auto;
     padding: 20px;
-    margin-top: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background: white;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+}
+
+/* Responsive Nav */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
 }

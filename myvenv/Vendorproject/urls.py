@@ -24,7 +24,7 @@ urlpatterns = [
     path('products/add/', add_product, name='add_product'),
 
     # Product Registration
-    path('products/register/', register_product, name='register_product'),
+    path('products/register/<int:product_id>', register_product, name='register_product'),
 
     # Invoice Management
     path('invoices/upload/', upload_invoice, name='upload_invoice'),

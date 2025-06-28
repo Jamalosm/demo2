@@ -154,6 +154,6 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "jamalosm.uniq@gmail.com"  # Change this to your actual email
-EMAIL_HOST_PASSWORD = "fuah qnso ibip jsxh"  # Use environment variables instead of hardcoding!
+EMAIL_HOST_PASSWORD = "glfg qdgt dphy lpyp"  # Use environment variables instead of hardcoding!
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 

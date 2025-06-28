@@ -106,7 +106,7 @@ def add_product(request):
 
 # ========== 5️⃣ Product Registration ==========
 @login_required
-def register_product(request):
+def register_product(request,product_id):
     if request.method == "POST":
         form = ProductRegistrationForm(request.POST)
         if form.is_valid():
